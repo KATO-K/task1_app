@@ -1,0 +1,12 @@
+<div class="mx-auto" style="width: 200px;">
+  <div class="row">
+    <h2><%= t('.dash_boards') %></h2><br>
+
+    <% if user_signed_in? %>
+      <h2><%= current_user.name %></h2>
+    <% end %>
+
+    <%= link_to "編集", edit_user_registration_path, class: 'btn btn-primary' %><br>
+    <%= link_to "ログアウト", destroy_user_session_path, class: 'btn btn-warning' %>
+  </div>
+</div>

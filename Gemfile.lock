@@ -92,6 +92,7 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.10.2)
       devise (>= 4.8.0)
+    devise-i18n-views (0.3.7)
     dry-configurable (0.15.0)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.6)
@@ -271,6 +272,7 @@ DEPENDENCIES
   config
   devise
   devise-i18n
+  devise-i18n-views
   jbuilder (~> 2.7)
   letter_opener_web
   listen (~> 3.3)
