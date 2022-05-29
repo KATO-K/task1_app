@@ -1,0 +1,34 @@
+<% provide(:title, "articles") %>
+<div class="mx-auto" style="width: 200px;">
+<h1>記事詳細</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <table class="table table-hover" id="table-tasks">
+      <thead>
+        <tr>
+          <th>タイトル</th>
+          <th>内容</th>
+          <th>画像</th>
+        </tr>
+      </thead>
+
+      <tbody>       
+        <tr>
+          <td><%= @article.title %></td>
+          <td><%= @article.content %></td>
+          <td><%= image_tag "/images/#{@article.image}" %></td>
+        </tr>
+
+        
+      </tbody>
+      
+    </table>
+    <div class="mx-auto" style="width: 200px;">
+      <%= link_to "編集", edit_users_article_path(id: @article.id), class: "btn btn-success" %>
+      <%= link_to "削除", users_article_path(id: @article.id), method: :delete,class: "btn btn-danger" %><br>
+      <%= link_to "記事一覧へ戻る", users_articles_path, class: "btn btn-lg btn-primary pull-right" %>
+    </div>
+  </div>    
+</div>

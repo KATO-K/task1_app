@@ -1,0 +1,14 @@
+<%= form_with(model: @article, url: users_articles_path(@user, id: params[:id]), local: true) do |f| %>
+  <%# <%= render 'shared/error_messages', object: @user %>
+
+  <%= f.label :title, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_field :title, class: "form-control" %>
+
+  <%= f.label :content, class: "label-#{yield(:class_text)}" %>
+  <%= f.text_area :content, class: "form-control" %>
+
+  <%= f.label :image, class: "label-#{yield(:class_text)}" %>
+  <%= f.file_field :image, class: "form-control" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary btn-block btn-#{yield(:class_text)}" %>
+<% end %>

@@ -1,0 +1,38 @@
+<% provide(:title, "articles") %>
+<div class="mx-auto" style="width: 200px;">
+<h1>記事一覧</h1>
+<%= link_to "新規作成", new_users_article_path(id: current_user.id), class: "btn btn-lg btn-primary pull-right" %>
+</div>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    
+    <table class="table table-hover" id="table-tasks">
+      <thead>
+        <tr>
+          <th>詳細</th>
+          <th>タイトル</th>
+          <th>内容</th>
+          <th>画像</th>
+          <th>編集・削除</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @articles.each do |a| %>
+          <tr>
+            <td><%= link_to "詳細", users_article_path(id: a.id), class: "btn btn-primary" %></td>
+            <td><%= a.title %></td>
+            <td><%= a.content %></td>
+            <td><%= image_tag "/images/#{a.image}" %></td>
+            <td>
+              <%= link_to "編集", edit_users_article_path(id: a.id), class: "btn btn-success" %>
+              <%= link_to "削除", users_article_path(id: a.id), method: :delete,
+              # data: { confirm: "「#{a.title}」を削除します。よろしいですか？" }, 
+              class: "btn btn-danger" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>    
+</div>
